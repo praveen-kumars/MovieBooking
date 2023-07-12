@@ -1,0 +1,35 @@
+
+<div class="container" >
+
+    <div class="m-3 details p-4" style="border:1px solid #cecece;">
+        <div>
+        Movie Name : {{movie[0].movieName}} <br>
+    </div>
+    <div>
+        Seats Count : {{seatsCount}}
+    </div>
+        Theatre Name : {{movie[0].theatres.theatreName}}
+    </div>
+
+
+    <form #f="ngForm" (ngSubmit)="bookTicket()" class="m-3" style="border:1px solid #cecece;"> 
+        <div class="alert alert-warning alert-dismissible fade show" *ngIf="seatsCount>10" role="alert">
+            Book a maximum of 10 seats
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+          </div>
+    <div class="seatingcontainer">
+<div *ngFor="let row of rows">
+    <div class="row">
+    <div *ngFor="let seat of row" [class.available]="isSeatAvailble(seat)" [class.selected]="isSeatSelected(seat)" (click)="toggleSeatSelection(seat)" class="seat">
+        {{seat}}
+    </div>
+  
+</div>
+</div>
+</div>
+
+<div class="text-center">
+    <button class="btn btn-success" [disabled]="seatsCount>10" type="submit" >Book</button>
+</div>
+</form>
+</div>

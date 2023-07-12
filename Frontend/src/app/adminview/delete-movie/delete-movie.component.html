@@ -1,0 +1,71 @@
+<body>
+    <div class="container">
+        <div class="movie-card mt-5">
+            <div class="movie-header" class="text-center mt-3">
+                <form  #form="ngForm" (submit)="deleteMovie()">
+                    <div class="form-group text-center">
+                         <label><b>Select Movie<strong style="color: red;">*</strong>  &nbsp;</b></label>
+                      <select [(ngModel)]="selectedOption" id="selectedOption" required name="selectedOption" >
+                        <option value="">Select an Movie</option>
+                        <option  *ngFor="let movie of movies">{{movie.movieName}}</option>
+                      </select>
+                    </div>
+                    <div class="text-center">
+                        <button   [disabled]="!form.valid"  class="btn btn-primary mt-3">Delete</button>
+                    </div>
+          
+                </form>
+                
+            </div><!--movie-header-->
+        </div><!--movie-card-->
+
+
+
+
+
+        
+        <div class="movie-card mt-5">
+            <div class="movie-header mt-3">
+                <form  #form="ngForm">
+                    <div class="form-group text-center" class="text-center">
+
+                        <label><b>Select Movie<strong style="color: red;">*</strong>  &nbsp;</b></label>
+          
+                      <select [(ngModel)]="movieOption"  id="movieOption" required name="movieOption" (ngModelChange)="onChange($event)">
+          
+                        <option value="">Select an Movie</option>
+          
+                        <option  *ngFor="let movie of movies" [ngValue]="movie">{{movie.movieName}}</option>
+                    </select>
+                    </div>
+                    <!-- <div>
+                        <button   [disabled]="!form.valid" (click)="retrieveTheatre()" class="btn btn-primary mt-3">Upload</button>
+        
+                    </div> -->
+                </form>
+<div class="text-center mt-3">
+    <label><b>Select Theatre<strong style="color: red;">*</strong>  &nbsp;</b></label>
+          
+            <select [(ngModel)]="theatreOption" id="theatreOption" required name="theatreOption"  >
+
+              <option value="">Select an Theatre</option>
+              <option *ngFor="let theatre of theatreName">{{theatre.theatreName}}</option>
+
+            </select>
+        </div>
+          <div class="text-center">
+              <button  (click)="deleteByTheatre()" class="btn btn-primary mt-3">  Delete </button>
+          
+</div>
+
+
+
+            </div>
+
+           
+        </div><!--movie-card-->
+        
+        
+    </div><!--container-->
+    
+    </body>

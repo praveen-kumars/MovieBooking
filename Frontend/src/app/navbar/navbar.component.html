@@ -1,0 +1,64 @@
+<nav class="navbar navbar-expand-lg navbar-light" style="background-color: #addbe1;">
+
+    <a class="navbar-brand" href="#"><b>TicketOne</b></a>
+  
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+  
+      <span class="navbar-toggler-icon"></span>
+  
+    </button>
+  
+    <div class="collapse navbar-collapse" id="navbarNav">
+  
+      <ul class="navbar-nav">
+  
+        <li class="nav-item active">
+  
+          <a class="nav-link" routerLink="/movie/viewMovie" *ngIf="authenticated">Movies</a>
+  
+        </li>
+  
+        <li class="nav-item active">
+  
+            <a class="nav-link" routerLink="/movie/ticket" *ngIf="authenticated">Tickets</a>
+  
+          </li>
+          <div class="dropdown mt-2" >
+            <a href="#" class="dropdown-toggle text-black-50" id="admin" data-bs-toggle="dropdown" *ngIf="authenticated && admin">Admin</a>
+            <div class="dropdown-menu">
+              <li class="nav-item active">
+  
+                <a class="nav-link" routerLink="/admin/addMovie" *ngIf="authenticated">Add Movies</a>
+        
+              </li>
+              <li class="nav-item active">
+  
+                <a class="nav-link" routerLink="/admin/UpdateSeats" *ngIf="authenticated">Theatre Details</a>
+        
+              </li>
+              <li class="nav-item active">
+  
+                <a class="nav-link" routerLink="/admin/DeleteMovie" *ngIf="authenticated">Delete Movie</a>
+        
+              </li>
+                <!-- <a href="#" class="dropdown-item">Add Movie</a>
+                <a href="#" class="dropdown-item">Update Seat Count</a>
+                <a href="#" class="dropdown-item">Overview</a> -->
+            </div>
+        </div>
+            <!-- <a class="nav-link" routerLink="/movie/ticket" *ngIf="authenticated">Admin</a> -->
+  
+        
+  
+      </ul>
+      <ul class="nav navbar-nav ms-auto">
+        <li class="nav-item text-white" ><a aria-disabled="true" class="nav-link">
+            {{userName}}</a>
+    </li>
+        <button class="nav-item rounded-pill py-0 pt-0 my-0 text-white bg-danger position-relative" *ngIf="authenticated" (click)="onLogout()"><a class="nav-link">
+            Logout</a>
+        </button>
+
+    </ul>
+    </div>
+  </nav>

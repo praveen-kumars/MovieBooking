@@ -1,0 +1,115 @@
+<body>
+    <div class="container">
+        <div class="movie-card">
+            <div class="movie-header" class="text-center mt-3">
+                <form  #form="ngForm">
+                    <div class="form-group text-center">
+                         <label><b>Select Movie<strong style="color: red;">*</strong>  &nbsp;</b></label>
+                      <select [(ngModel)]="selectedOption" id="selectedOption" required name="selectedOption" >
+                        <option value="">Select an Movie</option>
+                        <option  *ngFor="let movie of movies">{{movie.movieName}}</option>
+                      </select>
+                    </div>
+                    <div class="text-center">
+                        <button   [disabled]="!form.valid" (click)="retrieveTotal()" class="btn btn-primary mt-3">View</button>
+                    </div>
+          
+                </form>
+                
+            </div><!--movie-header-->
+            <div class="movie-content">
+                <div class="movie-content-header">
+                    <!-- <a href="#">
+                        <h3 class="movie-title">{{totalTicket}}</h3>
+                    </a> -->
+                    <!-- <div class="imax-logo"></div> -->
+                </div>
+                <div class="movie-info">
+                    <div class="info-section text-center" >
+                        <label>Available Tickers</label>
+                        <span>{{totalTicket}}</span>
+                    </div><!--date,time-->
+                    <!-- <div class="info-section">
+                        <label>BookedTicket</label>
+                        <span>03</span>
+                    </div> -->
+                    
+                </div>
+            </div><!--movie-content-->
+        </div><!--movie-card-->
+
+
+
+
+
+        
+        <div class="movie-card">
+            <div class="movie-header mt-3">
+                <form  #form="ngForm">
+                    <div class="form-group text-center" class="text-center">
+
+                        <label><b>Select Movie<strong style="color: red;">*</strong>  &nbsp;</b></label>
+          
+                      <select [(ngModel)]="movieOption"  id="movieOption" required name="movieOption" (ngModelChange)="onChange($event)" >
+          
+                        <option value="">Select an Movie</option>
+          
+                        <option  *ngFor="let movie of movies" [ngValue]="movie">{{movie.movieName}}</option>
+                    </select>
+                    </div>
+                    <!-- <div>
+                        <button   [disabled]="!form.valid" (click)="retrieveTheatre()" class="btn btn-primary mt-3">Upload</button>
+        
+                    </div> -->
+
+                  
+                </form>
+<div class="text-center mt-3">
+    <label><b>Select Theatre<strong style="color: red;">*</strong>  &nbsp;</b></label>
+          
+            <select [(ngModel)]="theatreOption" id="theatreOption" ngModel required name="theatreOption" >
+
+              <option value="">Select an Theatre</option>
+              <option *ngFor="let theatre of theatreName">{{theatre.theatreName}}</option>
+
+            </select>
+        </div>
+          <div class="text-center">
+              <button  (click)="retrieveByTheatre()" class="btn btn-primary mt-3">  View </button>
+          
+</div>
+
+<div class="movie-info">
+    <div class="info-section text-center" >
+        <label>Available Ticket</label>
+        <span>{{totalTicketPerTheatre}}</span>
+    </div>
+   
+    
+</div>
+
+
+
+            </div>
+
+            <div class="text-center mt-3">
+                <label><b>Set Ticket Status<strong style="color: red;">*</strong>  &nbsp;</b></label>
+                      
+                        <select [(ngModel)]="ticketStatus" id="ticketStatus" required name="ticketStatus"  >
+            
+                          <!-- <option value="">Set Ticket Status</option> -->
+                          <option >SOLD OUT</option>
+                          <option>Book Asap</option>
+            
+                        </select>
+                    </div>
+                      <div class="text-center">
+                          <button  (click)="setStatus()" class="btn btn-primary m-2">  Set status </button>
+                      
+            </div>
+        </div><!--movie-card-->
+        
+        
+    </div><!--container-->
+    
+    </body>

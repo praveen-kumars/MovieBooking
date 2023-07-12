@@ -1,0 +1,25 @@
+ .login-for{
+    width: 340px;
+    margin: 50px auto;
+}
+
+.login-for form{
+    margin-bottom: 15px;
+    padding: -4px;
+    
+}
+
+.login-for, .btn{
+    min-height: 38px;
+    /* font-weight: bold; */
+}
+.btn{
+    font-size: 15px;
+    /* font-weight: bold; */
+}
+
+.gradient-custom{
+background:#e9e9e9;
+} 
+
+ 

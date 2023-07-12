@@ -1,0 +1,21 @@
+ <body>   <div class="container">
+    <div class="movie-card" *ngFor="let movie of movies" (click)="sendMovieName(movie.movieName)">
+            <div class="movie-header theDarkTower">
+                <div class="header-icon-container">
+                    <!-- <a href="#">
+                        <i class="material-icons header-icon"></i>
+                    </a> -->
+                </div>
+            </div><!--movie-header-->
+            <div class="movie-content">
+                <div class="movie-content-header">
+                    <a href="#">
+                        <h3 class="movie-title">{{movie.movieName}}</h3>
+                    </a>
+                    <div class="imax-logo"></div>
+                </div>
+            </div><!--movie-content-->
+        </div><!--movie-card-->
+ 
+    </div><!--container-->
+</body>

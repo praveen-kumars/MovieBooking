@@ -1,0 +1,29 @@
+<body>   <div class="container">
+
+    <div class="movie-card" *ngFor="let item of movie[0].theatres;let i=index" (click)="sendTheatreIndex(i)">
+        <div class="movie-header bladeRunner2049">
+            <div>
+            </div>
+        </div><!--movie-header-->
+        <div class="movie-content">
+            <div class="movie-content-header">
+                <a href="#">
+                    <h3 class="movie-title">{{item.theatreName}}</h3>
+                </a>
+                <div class="imax-logo"></div>
+            </div>
+            <div class="movie-info">
+                <div class="info-section">
+                    <label>{{item.ticketStatus}}</label>
+                    <span>Sun 8 Sept - 10:00PM</span>
+                </div><!--date,time-->
+            </div>
+        </div><!--movie-content-->
+    </div><!--movie-card-->
+
+    <div class="alert alert-danger" role="alert" *ngIf="errore"><a routerLink="/movie/viewMovie" class="alert-link">{{error}}</a>
+      </div>
+    
+    
+</div><!--container-->
+</body>

@@ -1,0 +1,47 @@
+<section class="vh-100 gradient-custom">
+  <div class="container py-5 h-100">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+          <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+              <div class="card bg-dark text-white text-center" style="border-radius:1 rem;">
+                   <div class="mb-md-1 mt-md-4 pb-5 login-for">
+                    <h1>Sign Up</h1>
+<form #f="ngForm" (ngSubmit)="register(f)" class="p-5">
+    <div class="row mb-4">
+      <div class="col">
+        <div class="form-outline form-group">
+          <input type="text" id="firstName" class="form-control"  placeholder="firstName" required
+            ngModel name="firstName"/>
+          <!-- <label class="form-label" for="form3Example1">First name</label> -->
+        </div>
+      </div>
+      <div class="col">
+        <div class="form-group form-outline">
+          <input type="text" id="lastName" class="form-control" placeholder="lastName" required ngModel name="lastName" />
+          <!-- <label class="form-label" for="form3Example2">Last name</label> -->
+        </div>
+      </div>
+    </div>
+  
+    <!-- Email input -->
+    <div class="form-group form-outline form-white mb-4">
+      <input type="email" id="email" class="form-control" placeholder="email" required  ngModel name="email"/>
+    </div>
+  
+    <!-- Password input -->
+    <div class="form-outline mb-4">
+      <input type="password" id="password" class="form-control" placeholder="password" required ngModel name="password"/>
+    </div>
+
+    <div class="form-outline mb-4">
+        <input type="number" id="contactNumber" class="form-control" placeholder="phoneNumber" required ngModel name="contactNumber"/>
+      </div>
+
+<div class="text-center">
+    <button type="submit" class="btn btn-primary btn-block mb-4"[disabled]="!f.valid" >Sign up</button>
+</div>
+<div class="text-center">
+  <p>Already have a account? <a href="/auth" class="link-info">Sign in</a></p>
+</div>
+  </form>
+</div></div>
+</div></div></div></section>

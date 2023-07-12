@@ -1,0 +1,172 @@
+<section class="vh-100 gradient-custom">
+    <div class="container py-5 h-100">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+                <div class="card bg-dark text-white text-center" style="border-radius:1 rem;">
+                     <div class="mb-md-1 mt-md-4 pb-5 login-for">
+                        <h2 class="text-uppercase fw-bold mb-2 text-center">Login</h2>
+                        <p>Enter your username and password</p><br>
+                        <form  #f="ngForm" (ngSubmit)="onSubmit(f)">
+                                
+                            <div class="form-group form-outline form-white mb-4">
+                                <label for="username">USERNAME</label><br><br>
+                                <input
+                                 type="email"
+                                 class="form-control form-control-lg"
+                                 name="username"
+                                 placeholder="Enter Username"
+                                 ngModel
+                                 required
+                                 #username="ngModel">
+                            </div> 
+                            <span *ngIf="username.touched && !username.valid" style="color: red">Please Enter your User Name</span>
+            
+                            <div class="form-group form-outline form-white mb-4 ">
+                                <label for="password">PASSWORD</label><br><br>
+                                <input
+                                 type="password"
+                                 class="form-control form-control-lg"
+                                 name="password"
+                                 placeholder="Enter Password"
+                                 ngModel
+                                 required
+                                 id="password"
+                                 [class.is-invalid]="password.invalid && password.touched"
+                                 #password="ngModel"
+                                
+                                 >
+                                </div>
+                                <!-- pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[! @#$%&*()-+=^.])[A-Za-b\d!@#$%&*()-+=^.].{5,20}" -->
+                              
+                                
+                        
+                                <div *ngIf="password.errors">
+                                <small class="text-danger" *ngIf="password.errors?.['pattern']">*	It contains at least one digit.<br>
+                                    *	It contains at least one upper case alphabet.<br>
+                                    *   It contains at least one lower case alphabet.<br>
+                                    *	It contains at least one special character which includes! @#$%&*()-+=^.<br>
+                                    *	It doesn’t contain any white space.
+                                    </small>
+                            </div>
+                            <div class="text-center pt-1 mb-5 pb-1">
+                                <button type="submit" class="btn btn-primary btn-block fa-lg " [disabled]="!f.valid">Login</button>
+                            </div>
+                            <div class="text-center">
+                                <p>Don't have an account? <a href="/registration" class="link-info">Register Here</a></p>
+                              </div>
+                            <div class="alert alert-warning" *ngIf="active">Enter correct Username and Password</div>
+                        </form>
+                     </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </section>
+
+
+
+    <!-- <div>
+        <div class="container py-5 h-100 gradient-custom">
+          <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col-xl-5 ">
+              <div class="card rounded-3 text-dark">
+                <div class="row g-0">
+                    <div class="card-body p-md-5 mx-md-4">
+                      <h3 className='text-center'>LOGIN</h3>
+                      <form  #f="ngForm" (ngSubmit)="onSubmit(f)">
+                                
+                        <div class="form-group form-outline form-white mb-4">
+                            <label for="username">USERNAME</label><br><br>
+                            <input
+                             type="email"
+                             class="form-control form-control-lg"
+                             name="username"
+                             placeholder="Enter Username"
+                             ngModel
+                             required
+                             #username="ngModel">
+                        </div> 
+                        <span *ngIf="username.touched && !username.valid" style="color: red">Please Enter your User Name</span>
+        
+                        <div class="form-group form-outline form-white mb-4 ">
+                            <label for="password">PASSWORD</label><br><br>
+                            <input
+                             type="password"
+                             class="form-control form-control-lg"
+                             name="password"
+                             placeholder="Enter Password"
+                             ngModel
+                             required
+                             id="password"
+                             [class.is-invalid]="password.invalid && password.touched"
+                             #password="ngModel"
+                            
+                             >
+                            </div>
+                             pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[! @#$%&*()-+=^.])[A-Za-b\d!@#$%&*()-+=^.].{5,20}" -->
+                        <!-- <div *ngIf="password.errors">
+                            <small class="text-danger" *ngIf="password.errors?.['pattern']">*	It contains at least one digit.<br>
+                                *	It contains at least one upper case alphabet.<br>
+                                *   It contains at least one lower case alphabet.<br>
+                                *	It contains at least one special character which includes! @#$%&*()-+=^.<br>
+                                *	It doesn’t contain any white space.
+                                </small>
+                        </div> 
+                        <div class="text-center pt-1 mb-5 pb-1">
+                        <button type="submit" class="btn btn-primary btn-block fa-lg gradient-custom-2" [disabled]="!f.valid">Login</button>
+                        </div>
+                        <div class="alert alert-warning" *ngIf="active">Enter correct Username and Password</div>
+                    </form>
+      
+                    </div>
+                  </div>
+                 
+                </div>
+              </div>
+            </div>
+          </div>
+        </div> -->
+        
+        <!-- <form  #f="ngForm" (ngSubmit)="onSubmit(f)" >
+                            
+            <div class="form-group form-outline form-white mb-4">
+                <label for="username">USERNAME</label><br><br>
+                <input
+                 type="email"
+                 class="form-control form-control-lg"
+                 name="username"
+                 placeholder="Enter Username"
+                 ngModel
+                 required
+                 #username="ngModel">
+            </div> 
+            <span *ngIf="username.touched && !username.valid" style="color: red">Please Enter your User Name</span>
+
+            <div class="form-group form-outline form-white mb-4 ">
+                <label for="password">PASSWORD</label><br><br>
+                <input
+                 type="password"
+                 class="form-control form-control-lg"
+                 name="password"
+                 placeholder="Enter Password"
+                 ngModel
+                 required
+                 id="password"
+                 [class.is-invalid]="password.invalid && password.touched"
+                 #password="ngModel"
+                
+                 >
+                </div>
+                pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[! @#$%&*()-+=^.])[A-Za-b\d!@#$%&*()-+=^.].{5,20}"
+             <div *ngIf="password.errors">
+                <small class="text-danger" *ngIf="password.errors?.['pattern']">*	It contains at least one digit.<br>
+                    *	It contains at least one upper case alphabet.<br>
+                    *   It contains at least one lower case alphabet.<br>
+                    *	It contains at least one special character which includes! @#$%&*()-+=^.<br>
+                    *	It doesn’t contain any white space.
+                    </small>
+            </div> 
+
+            <button type="submit" class="bt btn-dark" [disabled]="!f.valid">Login</button>
+            <div class="alert alert-warning" *ngIf="active">Enter correct Username and Password</div>
+        </form> -->
